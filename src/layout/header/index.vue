@@ -1,16 +1,21 @@
 <template>
-    <div id="resize">头部</div>
+  <div class="yy-test">头部
+    <div class="yy-test__input">测试一下</div>
+  </div>
 </template>
 
-<script setup lang='ts'>
-import { ref, reactive } from 'vue'
-
+<script setup lang="ts">
+import { ref, reactive } from "vue";
 </script>
-<style scoped lang='less'>
-// Css3 新增属性 resize 需要配合overflow使用
-#resize {
-    border: 1px solid red;
-    resize: both;
-    overflow: hidden;
-}
+<style scoped lang="scss">
+@include b(test) {
+  color: red;
+  font: {
+    size: 18px;
+    weight: bold;
+  };
+  @include e(input) {
+    background-color: orange
+  }
+};
 </style>

@@ -1,0 +1,35 @@
+$namespace: "yy" !default;
+$block-sel: "-" !default;
+$element-sel: "__" !default;
+$mod-sel: "--" !default;
+
+// block  yy-input
+// element yy-input__button
+// mod yy-input--success
+
+@mixin b($block) {
+  // 插值语句
+  $B: #{$namespace + $block-sel + $block};
+  .#{$B} {
+    @content;
+  }
+}
+
+@mixin e($el) {
+  $selector: &;
+  //   跳出嵌套
+  @at-root {
+    #{$selector + $element-sel + $el} {
+      @content;
+    }
+  }
+}
+
+@mixin m($mod) {
+  $modsel: &;
+  @at-root {
+    #{$selector + $mod-sel + $mod} {
+      @content;
+    }
+  }
+}
