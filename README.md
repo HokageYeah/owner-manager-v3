@@ -1,18 +1,34 @@
-# Vue 3 + TypeScript + Vite
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## css采用sass + bem架构的方式布局
+1） 配置 SCSS 预处理器
 
-## Recommended IDE Setup
+2） 在每个 SCSS 文件中自动导入 bem.scss 文件，从而可以在项目的任何 SCSS 文件中直接使用 bem.scss 中定义的混入、变量
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+3）Vite.config.ts中关于scss文件配置
 
-## Type Support For `.vue` Imports in TS
+```shell
+// 从 'vite' 包中导入 defineConfig 函数
+import { defineConfig } from 'vite'
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+// 从 '@vitejs/plugin-vue' 包中导入 Vue 插件
+import vue from '@vitejs/plugin-vue'
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+// 使用 defineConfig 函数来定义 Vite 配置
+// 参考文档: https://vitejs.dev/config/
+export default defineConfig({
+    // 将 Vue 插件添加到插件数组中
+    plugins: [vue()],
+    
+    // 配置 CSS 预处理器选项
+    css: {
+        preprocessorOptions: {
+            // 配置 scss 预处理器选项
+            scss: {
+                // 在所有 scss 文件中自动导入 'src/bem.scss' 文件
+                additionalData: "@import './src/bem.scss';"
+            }
+        }
+    }
+})
+```
+  
