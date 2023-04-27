@@ -1,4 +1,3 @@
-/* eslint-disable import/no-absolute-path */
 import { createRouter, createWebHistory } from 'vue-router';
 import { App } from 'vue';
 import Layout from '@/layout/index.vue';
@@ -14,9 +13,9 @@ const router = createRouter({
     {
       component: Layout,
       path: '/',
-      children: []
-    }
-  ]
+      children: [],
+    },
+  ],
 });
 export function setupRouter(app: App) {
   app.use(router);

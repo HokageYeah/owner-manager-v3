@@ -1,82 +1,74 @@
-// eslint-disable-next-line no-undef
 module.exports = {
   root: true,
   env: {
     browser: true,
     node: true,
-    es6: true
+    es6: true,
   },
+  parser: 'vue-eslint-parser',
   parserOptions: {
-    ecmaVersion: 12,
     parser: '@typescript-eslint/parser',
+    ecmaVersion: 2020,
     sourceType: 'module',
     jsxPragma: 'React',
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
-  plugins: ['prettier'],
   extends: [
     'plugin:vue/vue3-recommended',
-    'airbnb-base',
-    // 'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended'
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
   ],
-  overrides: [
-    {
-      files: '*.html',
-      processor: 'vue/.vue'
-    }
-  ],
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx']
-      }
-    }
-  },
   rules: {
-    'prettier/prettier': [
+    'vue/script-setup-uses-vars': 'error',
+    '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
+    'vue/custom-event-name-casing': 'off',
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/ban-types': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-unused-vars': [
       'error',
       {
-        semi: true,
-        endOfLine: 'auto',
-        singleQuote: true,
-        trailingComma: 'none',
-        bracketSpacing: true,
-        jsxBracketSameLine: false,
-        vueIndentScriptAndStyle: false,
-        'jsxBracketSameLine:': true,
-        htmlWhitespaceSensitivity: 'ignore',
-        wrapAttributes: true,
-        overrides: [
-          {
-            files: '*.html',
-            options: {
-              parser: 'html'
-            }
-          }
-        ]
-      }
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
     ],
-    'import/no-extraneous-dependencies': [
+    'no-unused-vars': [
       'error',
       {
-        devDependencies: true
-      }
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
     ],
+    'space-before-function-paren': 'off',
     'vue/multi-word-component-names': 'off',
-    'import/no-unresolved': 'off',
-    'import/extensions': 'off',
-    'no-console': 'off',
-    'consistent-return': 'off',
-    'no-param-reassign': 'off',
-    'new-cap': 'off',
-    'no-shadow': 'off',
-    'no-underscore-dangle': 'off',
-    'vue/no-v-html': 'off',
-    'no-restricted-syntax': 'off',
-    'guard-for-in': 'off',
-    'import/prefer-default-export': 'off'
-  }
+    'vue/attributes-order': 'off',
+    'vue/one-component-per-file': 'off',
+    'vue/html-closing-bracket-newline': 'off',
+    'vue/max-attributes-per-line': 'off',
+    'vue/multiline-html-element-content-newline': 'off',
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/attribute-hyphenation': 'off',
+    'vue/require-default-prop': 'off',
+    'vue/html-self-closing': [
+      'error',
+      {
+        html: {
+          void: 'always',
+          normal: 'never',
+          component: 'always',
+        },
+        svg: 'always',
+        math: 'always',
+      },
+    ],
+  },
 };

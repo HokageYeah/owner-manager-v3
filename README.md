@@ -39,7 +39,7 @@ export default defineConfig({
 
 * （代码使用eslint教研，要在vscode中下载插件）
   
-* 添加了.eslintrc.cjs、.prettierignore、.prettierrc.json配置文件。
+* 添加了.eslintrc.cjs、.prettierignore、.prettierrc.json、.eslintignore配置文件。
   
 * .eslintrc.cjs文件生成使用命令：
 
@@ -50,5 +50,21 @@ export default defineConfig({
 * 开发环境添加第三方库:
   
   ```shell
-  npm install  @typescript-eslint/eslint-plugin  @typescript-eslint/parser  eslint  eslint-config-airbnb-base  eslint-config-prettier  eslint-define-config  eslint-plugin-import  eslint-plugin-prettier  eslint-plugin-vue  vite-plugin-eslint -D
+  npm install  @typescript-eslint/eslint-plugin  @typescript-eslint/parser  eslint   eslint-config-prettier  eslint-define-config   eslint-plugin-prettier  eslint-plugin-vue  vue-eslint-parser  -D
+  ```
+* package.json新增代码:
+  ```shell
+    "lint-staged": {
+    "*.{vue,js,ts,tsx}": "eslint --fix"
+  },
+  "keywords": [
+    "vue",
+    "naive-ui",
+    "naive-ui-admin",
+    "vue3",
+    "ts",
+    "tsx",
+    "admin",
+    "typescript"
+  ]
   ```
