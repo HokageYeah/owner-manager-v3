@@ -1,7 +1,8 @@
 
-1、css采用sass + bem架构的方式布局
+项目汇总：
 ================================
 
+> ## 1、css采用sass + bem架构的方式布局
 1） 配置 SCSS 预处理器
 
 2） 在每个 SCSS 文件中自动导入 bem.scss 文件，从而可以在项目的任何 SCSS 文件中直接使用 bem.scss 中定义的混入、变量
@@ -34,9 +35,8 @@ export default defineConfig({
 })
 ```
   
+> ## 2、项目汇总添加 eslint搭建生产项目配置
 
-2、项目汇总添加 eslint搭建生产项目配置。
-================================
 * （代码使用eslint教研，要在vscode中下载插件）
   
 * 添加了.eslintrc.cjs、.prettierignore、.prettierrc.json配置文件。
