@@ -1,14 +1,14 @@
 <template>
-    <div>
-        <Header></Header>
-        <Content></Content>
-    </div>
+  <div>
+    <Header></Header>
+    <Content></Content>
+  </div>
 </template>
 
-<script setup lang='ts'>
-import { ref, reactive } from 'vue'
-import Header from './header/index.vue'
-import Content from './content/index.vue'
-
+<script setup lang="ts">
+// import { ref, reactive } from 'vue';
+import Header from './header/index.vue';
+import Content from './content/index.vue';
+// import index from '@/layout/content/index.vue';
 </script>
 <style scoped></style>
