@@ -10,4 +10,4 @@ async function bootstrap() {
   await router.isReady();
   app.mount('#app', true);
 }
-bootstrap();
+void bootstrap();
