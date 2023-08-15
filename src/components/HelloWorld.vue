@@ -7,6 +7,10 @@
   const sayHello = () => {
     // eslint-disable-next-line no-alert
     console.log('hello ssr' + props.msg);
+    console.log('点击报错');
+    const a = {};
+    // @ts-ignore
+    a.split('/');
   };
 </script>
 
