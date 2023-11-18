@@ -3,6 +3,7 @@ import './style.css';
 import App from './App.vue';
 import router, { setupRouter } from '@/router';
 import webMonitor from '@web-monitor/vue3';
+import popBox from './components/uni-pop-box/pop-box';
 
 async function bootstrap() {
   const app = createApp(App);
@@ -28,6 +29,7 @@ async function bootstrap() {
     },
   });
 
+  app.use(popBox, { title: '哈哈哈哈哈', msg: '那是贷记卡接口连接科林斯多久' });
   app.mount('#app', true);
 }
 void bootstrap();
